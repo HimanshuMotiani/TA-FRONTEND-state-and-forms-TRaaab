@@ -4,7 +4,7 @@ class App extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            imgSrc:""
+            imgSrc:"basketball"
         }
     }
     render(){
@@ -19,7 +19,7 @@ class App extends React.Component {
             <button onClick={()=>this.handleClick("tiger")}>Tiger</button>
         </div>
         <div>
-            <img src={'../assets/'+this.state.imgSrc+'.jpg'} alt="img" />
+            <img src={`./images/${this.state.imgSrc}.jpg`} alt="img" />
         </div>
         </>
     )
