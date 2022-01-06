@@ -10,6 +10,7 @@ class App extends React.Component {
             max: null
         }
     }
+    
     render() {
         return (
             <>
