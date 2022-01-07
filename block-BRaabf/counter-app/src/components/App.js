@@ -10,16 +10,16 @@ class App extends React.Component {
             max: null
         }
     }
-    
+
     render() {
         return (
             <>
                 <h1>{this.state.counter}</h1>
                 <div>
                     <h2>STEPS</h2>
-                    <button onClick={() => this.handleStep(5)}>5</button>
-                    <button onClick={() => this.handleStep(10)}>10</button>
-                    <button onClick={() => this.handleStep(15)}>15</button>
+                    <button className={this.isActive(5)} onClick={() => this.handleStep(5)}>5</button>
+                    <button className={this.isActive(10)} onClick={() => this.handleStep(10)}>10</button>
+                    <button className={this.isActive(15)} onClick={() => this.handleStep(15)}>15</button>
                 </div>
                 <div>
                     <button onClick={this.handleIncrement}>Increment</button>
@@ -32,14 +32,14 @@ class App extends React.Component {
                 <h1>{this.state.counterNew}</h1>
                 <div>
                     <h2>STEPS</h2>
-                    <button onClick={() => this.handleStep(5)}>5</button>
-                    <button onClick={() => this.handleStep(10)}>10</button>
-                    <button onClick={() => this.handleStep(15)}>15</button>
+                    <button className={this.isActive(5)} onClick={() => this.handleStep(5)}>5</button>
+                    <button className={this.isActive(10)} onClick={() => this.handleStep(10)}>10</button>
+                    <button className={this.isActive(15)} onClick={() => this.handleStep(15)}>15</button>
 
                     <h2>MAX VALUE</h2>
-                    <button onClick={() => this.handleMax(15)}>15</button>
-                    <button onClick={() => this.handleMax(100)}>100</button>
-                    <button onClick={() => this.handleMax(200)}>200</button>
+                    <button className={this.isActiveMax(15)} onClick={() => this.handleMax(15)}>15</button>
+                    <button className={this.isActiveMax(100)} onClick={() => this.handleMax(100)}>100</button>
+                    <button className={this.isActiveMax(200)} onClick={() => this.handleMax(200)}>200</button>
                 </div>
                 <div>
                     <button onClick={this.handleInc}>Increment</button>
@@ -48,6 +48,12 @@ class App extends React.Component {
                 </div>
             </>
         )
+    }
+    isActive = (value) => {
+        return value == this.state.step ? 'active' : 'default'
+    }
+    isActiveMax = (value) => {
+        return value == this.state.max ? 'active' : 'default'
     }
     handleStep = (val) => {
         this.setState({
@@ -98,7 +104,7 @@ class App extends React.Component {
         }
         else {
             this.setState({
-                counterNew: ((this.state.counterNew + this.state.step) < this.state.max) ? (this.state.counterNew + this.state.step) :this.state.counterNew 
+                counterNew: ((this.state.counterNew + this.state.step) < this.state.max) ? (this.state.counterNew + this.state.step) : this.state.counterNew
             })
         }
     }
@@ -117,9 +123,9 @@ class App extends React.Component {
     handleReset = () => {
         this.setState({
             counter: 0,
-            counterNew:0,
+            counterNew: 0,
             step: null,
-            max:null
+            max: null
         })
     }
 }
