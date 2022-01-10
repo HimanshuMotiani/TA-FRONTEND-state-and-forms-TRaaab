@@ -29,9 +29,7 @@ function App(params) {
                         <h2>Closed State</h2>
                         <div className="cont">
                             {
-                                questions.map((item,index)=>(
-                                  <Accordian key={item.Q} question={item} index={index}></Accordian>
-                                ))
+                                <Accordian/>   
                             }
                         </div>
                     </div>
