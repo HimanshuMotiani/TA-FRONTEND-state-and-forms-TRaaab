@@ -4,13 +4,15 @@ module.exports = {
   theme: {
     extend: {
       backgroundColor: theme => ({
-        'back': '#d8fcfd',
-       })
+        back: '#d8fcfd',
+        secondary: '#C4A462',
+       }),
     },
     textColor: {
       primary: '#112337',
       secondary: '#C4A462',
       tertiary: '#6C77A5',
+      white:'#FFFFFF'
     },
     flex: {
       45: '0 1 45%',

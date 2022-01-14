@@ -17,7 +17,7 @@ class Tags extends React.Component {
                     <ul className="text-center mx-2.5 mb-10">
                         {
                             types.map(type => (
-                                <li onClick={()=>this.handleClick(type)} className="inline-block mr-7 text-3xl textColor-secondary">{type}</li>
+                                <li onClick={()=>this.handleClick(type)} className={type === this.state.type ? "bg-secondary inline-block mr-7 text-3xl text-white py-2 px-2 border border-indigo-600":"inline-block mr-7 text-3xl text-secondary"}>{type}</li>
                             ))
                         }
                     </ul>
