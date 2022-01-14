@@ -16,14 +16,14 @@ function Food(props) {
                     {itemList.map((item) => (
                         <div className="flex flex-45 mx-3 mb-8">
                             <div>
-                                <img className="border-4 border-indigo-600  w-72 h-56" src={item.img} />
+                                <img className="border-4 border-secondary  w-72 h-56" src={item.img} />
                             </div>
                             <div className="ml-6">
                                 <div className="flex justify-between">
-                                    <h2 className="text-2xl textColor-headingColor">{item.title}</h2>
-                                    <h3 className="text-2xl ">{item.price}</h3>
+                                    <h2 className="text-2xl text-primary">{item.title}</h2>
+                                    <h3 className="text-2xl text-secondary">{item.price}</h3>
                                 </div>
-                                <hr className="border-dotted border-2" />
+                                <hr className="border-dotted border-2 text-secondary" />
                                 <p className="mt-5">{item.desc}
                                 </p>
                             </div>
