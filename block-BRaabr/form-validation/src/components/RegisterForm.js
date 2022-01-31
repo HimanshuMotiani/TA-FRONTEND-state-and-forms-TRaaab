@@ -62,22 +62,22 @@ class RegisterForm extends React.Component {
                             <form onSubmit={this.handleSubmit} className="flex w-1/5 flex-col my-0 mx-auto text-2xl py-8">
                                 <div className="mb-4">
                                     <label htmlFor="username" className="block">Text Input</label>
-                                    <input type="text" name="username" onChange={this.handleInput} id="username" value={this.state.username} placeholder="Type Something" />
+                                    <input className={username?"error":""} type="text" name="username" onChange={this.handleInput} id="username" value={this.state.username} placeholder="Type Something" />
                                 </div>
                                 <span>{username}</span>
                                 <div className="mb-4">
                                     <label htmlFor="email" className="block">Email Input</label>
-                                    <input type="email" name="email" onChange={this.handleInput} value={this.state.email} placeholder="Enter Email" />
+                                    <input type="email" className={email ?"error":""} name="email" onChange={this.handleInput} value={this.state.email} placeholder="Enter Email" />
                                 </div>
                                 <span>{email}</span>
                                 <div className="mb-4">
                                     <label htmlFor="password" className="block">Password</label>
-                                    <input type="text" name="password" onChange={this.handleInput} placeholder="Enter Password" />
+                                    <input type="text" className={password?"error":""} name="password" onChange={this.handleInput} placeholder="Enter Password" />
                                 </div>
                                 <span>{password}</span>
                                 <div className="mb-4">
                                     <label htmlFor="confirmPassword" className="block">Confirm Password</label>
-                                    <input type="text" name="confirmPassword" onChange={this.handleInput} placeholder="Enter Confirm Password" />
+                                    <input type="text" className={confirmPassword?"error":""} name="confirmPassword" onChange={this.handleInput} placeholder="Enter Confirm Password" />
                                 </div>
                                 <span>{confirmPassword}</span>
                                 <button type="submit">Submit</button>

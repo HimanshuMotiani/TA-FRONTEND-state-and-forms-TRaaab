@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+span{
+    color:red;
+}
+input{
+    outline: none;
+}
+.error{
+    border: 1px solid red;
+}
+
