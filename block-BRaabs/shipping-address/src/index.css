@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.flex-45{
+    flex: 0 1 45%;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container{
+max-width: 1260px;
+margin: 4rem auto;
+padding: 0 2rem;
+}
