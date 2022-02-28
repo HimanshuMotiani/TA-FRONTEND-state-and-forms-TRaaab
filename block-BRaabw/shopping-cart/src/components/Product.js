@@ -62,7 +62,7 @@ class Product extends React.Component {
 
                     <article className="flex flex-wrap mt-4 ">
                         {products.map((product, index) => (
-                            <article className={"flex-24 text-center mr-1 mb-7 p-4 relative hover:border-sky-500"}
+                            <article className={"flex-24 text-center mr-1 mb-7 p-4 relative hover:border border-yellow-500"}
                             >
                                 <img src={"/images/static/products/" + product.sku + "_1.jpg"} />
                                 <h5 className="my-3 h-11">{product.title}</h5>
@@ -70,7 +70,7 @@ class Product extends React.Component {
                                 <h6 className="text-sm inline-block mr-1.5">$</h6><span className="text-xl">{product.price.toFixed(2)}</span>
                                 <p className="bg-black w-17 px-1 py-.5 font-extralight text-xs font-thin text-white absolute top-0 right-0">Free Shipping</p>
                                 <h4 className="text-gray-400">{`or`} {product.installments} * {(product.price / product.installments).toFixed(2)}</h4>
-                                <button onClick={()=>this.props.addToCart(product)} className="bg-black text-yellow-400 my-3 py-4 w-11/12">Add to Cart</button>
+                                <button onClick={()=>this.props.addToCart(product)} className="bg-black text-white my-3 py-4 w-11/12 hover:bg-yellow-400">Add to Cart</button>
                             </article>
                         ))}
 

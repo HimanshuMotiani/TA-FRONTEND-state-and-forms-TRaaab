@@ -8,7 +8,6 @@ class App extends React.Component {
         this.state = {
             activeSize : [],
             productCart :[],
-            cartOpen:false
         }
     }
     handleSize = (event)=>{
@@ -74,11 +73,7 @@ class App extends React.Component {
              productCart:productArr
      })
     }
-    closeCart = ()=>{
-        this.setState((prevState)=>({
-            cartOpen: !prevState.cartOpen
-          }))
-    }
+    
     render(){
     return (
     <>
@@ -89,7 +84,6 @@ class App extends React.Component {
         handleIncrement={this.handleIncrement} 
         handleDecrement={this.handleDecrement}
         removeProduct={this.removeProduct}
-        closeCart={this.closeCart}
         state={this.state}
         />
     </main>

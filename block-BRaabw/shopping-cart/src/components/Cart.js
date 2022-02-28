@@ -3,11 +3,23 @@ class Cart extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state ={
+            cartOpen:false
+        }
 
+    }
+    handleCart= ()=>{
+        this.setState({
+            cartOpen:!this.state.cartOpen
+        })
+    }
+    closeCart = ()=>{
+        this.setState((prevState)=>({
+            cartOpen: !prevState.cartOpen
+          }))
     }
 
     render() {
-        let {cartOpen} = this.props.state;
         var allProducts = this.props.productCart;
         var totalProducts = allProducts.reduce( (acc, cv)=> { 
             acc =  acc + cv.quantity; 
@@ -17,18 +29,19 @@ class Cart extends React.Component {
             acc =  acc + cv.price * cv.quantity; 
             return acc;
         }, 0);
+
+        
         return (
             <>
-                {/* <div className="relative">
-                <button onClick={this.handleCart}><img className="h-18 w-20 bg-black p-4" src="/images/static/bag-icon.png"/></button>
-                <div className="bg-yellow-400 text-black rounded-full w-6 flex items-center justify-center absolute top-12 right-0">{totalProducts}</div>
-            </div> */}
+                <div className={this.state.cartOpen == false ?"relative ":"relative hidden"}>
+                <button  onClick={this.handleCart}><img className="h-18 w-20 bg-black p-4" src="/images/static/bag-icon.png"/></button>
+                <div className="bg-yellow-400 text-black rounded-full w-6 flex items-center justify-center absolute top-12 right-120">{totalProducts}</div>
+                </div>
 
                 <div className="bg-black flex">
-
-                    <div className="absolute top-0 right-0 min-h-screen">
-                        <div className={cartOpen?"w-400 pt-12 bg-black mx-auto px-4": "w-400 pt-12 bg-black mx-auto px-4 hidden"}>
-                            <span className="text-white" onClick={this.props.closeCart}>X</span>
+                    <div className={ this.state.cartOpen?"absolute top-0 right-0  min-h-screen w-4/12":"absolute top-0 right-0  min-h-screen w-4/12 hidden"}>
+                        <div className="pt-12 bg-black mx-auto px-4">
+                            <span className="text-white cursor-pointer" onClick={this.closeCart}>X</span>
                             <div className="relative align-top text-center">
                                 <button onClick={this.handleCart}><img className="h-14 w-14 bg-black" src="/images/static/bag-icon.png" /></button>
                                 <div className="bg-yellow-400 text-black rounded-full w-6 flex items-center justify-center absolute top-10 right-52">{totalProducts}</div>
