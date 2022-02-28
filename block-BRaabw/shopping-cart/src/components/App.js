@@ -10,6 +10,21 @@ class App extends React.Component {
             productCart :[],
         }
     }
+
+    componentDidMount() {
+        if (localStorage.carts) {
+            this.setState({ productCart: JSON.parse(localStorage.carts) })
+        }
+        this.eventId = window.addEventListener("beforeunload", this.handleUpdateLocalStorage)
+    }
+
+    componentWillUnmount(){
+        window.removeEventListener("beforeunload", this.handleUpdateLocalStorage)
+    }
+    handleUpdateLocalStorage = ()=>{
+        localStorage.setItem("carts",JSON.stringify(this.state.productCart))
+    }
+
     handleSize = (event)=>{
         let val = event.target.innerText;
         let sizes = this.state.activeSize;
