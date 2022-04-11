@@ -81,7 +81,7 @@ class Cart extends React.Component {
                                 </div>
                             </div>
                             <div className="w-11/12">
-                                <button className=" w-11/12 ml-10 bg-gray-800 py-2 px-6 text-white text-2xl mb-5">CHECKOUT</button>
+                                <button onClick={()=>alert(`Your total sum is ${totalSum}$`)} className=" w-11/12 ml-10 bg-gray-800 py-2 px-6 text-white text-2xl mb-5">CHECKOUT</button>
                             </div>
                         </div>
                     </div>
